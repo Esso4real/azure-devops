@@ -17,12 +17,15 @@ stages:
           repository: 'azureconrepo'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
+      - bash: echo Contents in workdir; ls -R $(System.DefaultWorkingDirectory)  
+      - bash: echo before copying contenet to buildir; ls -R $(Build.ArtifactStagingDirectory)
       - task: CopyFiles@2
         inputs:
           SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifest'
           Contents: '**'
           TargetFolder: '$(Build.ArtifactStagingDirectory)'
           OverWrite: true
+      - bash: echo contents in birdir; ls -R $(Build.ArtifactStagingDirectory)
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
