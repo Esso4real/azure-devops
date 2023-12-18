@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'e0a1c5e8-b8b0-4753-a5bf-a7ae7c5e4d31'
-  imageRepository: 'kubenginx'
+  imageRepository: 'dev/kubenginx'
   containerRegistry: 'myclusteracr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
