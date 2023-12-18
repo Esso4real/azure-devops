@@ -18,7 +18,6 @@ variables:
 
 pool: azurevm
 
-
 stages:
 - stage: Build
   displayName: Build and push stage
