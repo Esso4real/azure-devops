@@ -17,4 +17,15 @@ stages:
           repository: 'azureconrepo'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifest'
+          Contents: '**'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          OverWrite: true
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'kube-manifests'
+          publishLocation: 'Container'
 
