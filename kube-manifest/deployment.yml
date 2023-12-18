@@ -1,12 +1,12 @@
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: my-secret
-  namespace: default
-type: kubernetes.io/dockerconfigjson
-data:
-  .dockerconfigjson: eyJhdXRocyI6IHsibXljbHVzdGVyYWNyLmF6dXJlY3IuaW8iOiB7InVzZXJuYW1lIjogIjZhOTdhZWJjLTE0OGYtNDIyYS04NmI1LTBlNzk2MjNkY2NhMiIsICJwYXNzd29yZCI6ICJQV2k4UX5ZRFJ6TGVuaFpnTnYtS0tKZTVFMjRiWVdidUkyVGdvY2ZqIn19fQ==
+# ---
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: my-secret
+#   namespace: default
+# type: kubernetes.io/dockerconfigjson
+# data:
+#   .dockerconfigjson: eyJhdXRocyI6IHsibXljbHVzdGVyYWNyLmF6dXJlY3IuaW8iOiB7InVzZXJuYW1lIjogIjZhOTdhZWJjLTE0OGYtNDIyYS04NmI1LTBlNzk2MjNkY2NhMiIsICJwYXNzd29yZCI6ICJQV2k4UX5ZRFJ6TGVuaFpnTnYtS0tKZTVFMjRiWVdidUkyVGdvY2ZqIn19fQ==
 
 ---
 apiVersion: apps/v1
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: kube-nginx
-        image: myclusteracr.azurecr.io/kube-nginx:v2
+        image: myclusteracr.azurecr.io/azureconrepo
         imagePullPolicy: Always
         ports:
         - containerPort: 80
