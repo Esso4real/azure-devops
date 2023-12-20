@@ -13,8 +13,8 @@ stages:
       steps:
       - task: Docker@2
         inputs:
-          containerRegistry: 'myclusterconnection'
-          repository: 'azureconrepo'
+          containerRegistry: 'myarcconn'
+          repository: 'mydemoacrapp'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
       - bash: echo Contents in workdir; ls -R $(System.DefaultWorkingDirectory)  
@@ -31,4 +31,3 @@ stages:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
           ArtifactName: 'kube-manifests'
           publishLocation: 'Container'
-
