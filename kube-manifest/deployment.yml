@@ -27,13 +27,13 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: kube-nginx
-        image: myclusteracr.azurecr.io/azureconrepo
+      - name: mydemoacrapp
+        image: mydemoacrapp.azurecr.io/mydemoacrapp
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-      imagePullSecrets:
-        - name: my-secret
+      # imagePullSecrets:
+      #   - name: my-secret
 
 ---
 apiVersion: v1
